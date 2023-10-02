@@ -28,7 +28,7 @@ def elastic_collision(masses, velocities, angles):
         masses: A list or array of the masses of the two bodies.
         velocities: A list or array of the initial velocities of the two bodies.
         angles: A list or array of the angles of the initial velocities of the two bodies, in degrees.
-
+#Just curious, did you calculate both x and y velocities?
     Returns:
         A tuple of two lists or arrays, representing the final velocities of the two bodies, respectively.
     """
