@@ -1,3 +1,5 @@
+#I am just curious, is this code only for calculating final velovities? If I understand it correctly. I dont see any momentum or KE. Or is this incomplete?
+Thank you
 import numpy as np
 
 def conserve_momentum(m1, v1, m2, v2):
