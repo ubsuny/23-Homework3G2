@@ -32,6 +32,13 @@ def elastic_collision(masses, velocities, angles):
     Returns:
         A tuple of two lists or arrays, representing the final velocities of the two bodies, respectively.
     """
+    # Check if input lists have the same length.
+    if len(masses) != len(velocities) or len(masses) != len(angles):
+        raise ValueError("Input lists must have the same length.")
+
+    # Check if angles are within a valid range.
+    if any(angle < 0 or angle >= 360 for angle in angles):
+        raise ValueError("Angles must be in the range [0, 360) degrees.")
 
     # Convert the angles to radians.
     angles = np.radians(angles)
