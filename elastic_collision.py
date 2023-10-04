@@ -1,3 +1,5 @@
+#1-D elastic collision.
+#Functional concepts used: lambda, list and map
 import numpy as np
 
 # Define a lambda function that calculates the final velocity for one body.
