@@ -1,5 +1,6 @@
 import unittest
 import math
+import numpy as np
 class Particle:
     def __init__(self, mass, velocity):
         self.mass = mass
