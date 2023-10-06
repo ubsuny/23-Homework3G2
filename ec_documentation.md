@@ -6,9 +6,11 @@ This code demonstrates how to calculate the final velocities of two objects invo
 
 A lambda function `calculate_final_velocity` is defined to calculate the final velocity of one of the objects involved in the collision. The lambda function takes four arguments: `m1` (mass of the first object), `v1` (initial velocity of the first object), `m2` (mass of the second object), and `v2` (initial velocity of the second object). It uses the following formula for calculating the final velocity of the first object:
 
-```python
+
+$$
 ((m1 - m2) / (m1 + m2)) * v1 + (2 * m2 / (m1 + m2)) * v2
-```
+$$
+
 This formula is based on the principles of conservation of momentum and kinetic energy in an elastic collision.
 
 ## elastic_collision Function
