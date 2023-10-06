@@ -1,8 +1,34 @@
-def elastic_collision(m1,m2,u1,u2):
-    #m1 is the mass of object 1, m2 is the mass of object 2, u1 is the initial velocity of object 1 before collision, u2 is the initial velocity of object 2 before collision
-    v1=(m1-m2)*u1/(m1+m2)+(2*m2*u2)/(m1+m2)
-    v2=(m2-m1)*u2/(m1+m2)+(2*m1*u1)/(m1+m2)
-    return(v1,v2)
-#v1 is the final velocity of object 1 after collision, v2 is the final velocity of object 2 after collision
+#1-D elastic collision.
+#Functional concepts used: lambda, list and map
+import numpy as np
 
-print(elastic_collision(2,1.5,3,-2))
+# Define a lambda function that calculates the final velocity for one body.
+calculate_final_velocity = lambda m1, v1, m2, v2: (
+    ((m1 - m2) / (m1 + m2)) * v1 + (2 * m2 / (m1 + m2)) * v2
+)
+
+def elastic_collision(masses, velocities):
+    """
+    Calculate final velocities of two objects involved in an elastic collision.
+
+    Args:
+        masses (list): A list of masses for both objects.
+        velocities (list): A list of initial velocities for both objects.
+
+    Returns:
+        list: A list containing the final velocities for both objects.
+    """
+    # Use map to apply the calculate_final_velocity lambda function to pairs of masses and velocities.
+    # The lambda function takes one mass and velocity for each object and calculates the final velocity for that object.
+    # The reversed() function is used to iterate in reverse order, as the second object's parameters come first in the formula.
+    final_velocities = list(map(calculate_final_velocity, masses, velocities, reversed(masses), reversed(velocities)))
+    return final_velocities
+
+# Example usage:
+masses = [1, 1]
+velocities = [1, -1]
+
+# Call the function to calculate final velocities.
+final_velocities = elastic_collision(masses, velocities)
+
+print(f"Final velocities: {final_velocities}")
